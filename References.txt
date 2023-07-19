@@ -1,0 +1,116 @@
+References
+[1]
+Paustian Margit, Theuvsen Ludwig
+Adoption of Precision Agriculture Technologies by German Crop Farmers
+Springer (2016)
+Google Scholar
+[2]
+Groher Tanja, Heitkämper Katja, Walter Achim, Liebisch Frank, Umstätter Christina
+Status Quo of Adoption of Precision Agriculture Enabling Technologies in Swiss Plant Production
+Springer (2020)
+Google Scholar
+[3]
+Abdmezie Mohammed Riyadh, Tandjaoui D., Romdhani Imed
+Architecting the Internet of Things:State of the Art
+Springer (2016)
+Google Scholar
+[4]
+Akhter Ravesa, AhmadSofi Shabir
+Precision Agriculture using IoT Data Analytics and Machine Learning
+Elsevier (2021)
+Google Scholar
+[5]
+Sharma Abhinav, Jain Arpit, Gupta Prateek, Chowdary Vinay
+Machine Learning Applications for Precision Agriculture: A Comprehensive Review
+IEEE (2020)
+Google Scholar
+[6]
+Kamilaris Andreas, Prenafeta-Boldu F.
+Deep Learning in Agriculture: A Survey
+Elsevier (2018)
+Google Scholar
+[7]
+Torky Mohamed, Hassanein Abdoul Ella
+Integrating Blockchain and the Internet of Things in Precision Agriculture: Analysis, Opportunities, and Challenges
+Elsevier (2020)
+Google Scholar
+[8]
+Cramer Sam, Kampouridis Michael, Freitas Alex A., Alexandridis Antonis K.
+An Extensive Evaluation of Seven Machine Learning Methods for Rainfall Prediction in Weather Derivatives
+Elsevier (2017)
+Google Scholar
+[9]
+Yost Jenifer L., Hartemink Alfred E.
+How Deep Is the Soil Studied – An Analysis of Four Soil Science Journals
+Springer (2019)
+Google Scholar
+[10]
+Suchithra M.S., Pai Maya L.
+Improving the Prediction Accuracy of Soil Nutrient Classification by Optimizing Extreme Learning Machine Parameters
+Elsevier (2020)
+Google Scholar
+[11]
+Keswani Bright, Mohapatra Ambarish G., Keswani Poonam, Khanna Ashish, Gupta Deepak, Rodrigues Joel
+Improving Weather Dependent Zone Specific Irrigation Control Scheme in IoT and Big Data Enabled Self Driven Precision Agriculture Mechanism
+Taylor and Francis (2020)
+Google Scholar
+[12]
+Espejo-Garcia Borja, Mylonas Nikos, Athanasakos Loukas, Fountas Spyros, Vasilakoglou Ioannis
+Towards Weeds Identification Assistance Through Transfer Learning
+Elsevier (2020)
+Google Scholar
+[13]
+Chen Junde, Chen Jinxiu, Zhang Defu, Sun Yuandong, Nanehkaran Y.A.
+Using Deep Transfer Learning for Image-Based Plant Disease Identification
+Elsevier (2020)
+Google Scholar
+[14]
+Dash Ritesh, Dash Dillip Ku, Biswal G.C.
+Classification of Crop Based on Macronutrients and Weather Data using Machine Learning Techniques
+Elsevier (2021), p. 8
+View in ScopusGoogle Scholar
+[15]
+Priyadharshini A., Chakraborty Swapneel, Kumar Aayush, Rajendra Pooniwala O.
+Intelligent crop recommendation system using machine learning
+(2021), p. 6
+Google Scholar
+[16]
+Yang Senshan, Logan Joanne, Coffey David L.
+Mathematical Formulae for Calculating the Base Temperature for Growing Degree Days
+Elsevier (1995)
+Google Scholar
+[17]
+Tang JingLei, Wang Dong, Zhang ZhiGuang, He LiJun, Xin Jing, Xu Yang
+Weed Identification Based on K-Means Feature Learning Combined with Convolutional Neural Network
+Elsevier (2017)
+Google Scholar
+[18]
+Hasan A.S.M. Mahmudul, Sohel Ferdous, Diepeveen Dean, Laga Hamid, Jones Michael G.K.
+A Survey of Deep Learning Techniques for Weed Detection from Images
+Elsevier (2021)
+Google Scholar
+[19]
+Jin Xiaojun, Che Jun, Chen Yong
+Weed Identification using Deep Learning and Image Processing in Vegetable Plantation
+IEEE (2021)
+Google Scholar
+[20]
+Kasinathan Thenmozhi, Singaraju Dakshayani, Uyyala Srinivasulu Reddy
+Insect Classification and Detection in Field Crops using Modern Machine Learning Techniques
+Elsevier (2021)
+Google Scholar
+[21]
+Saoud Zakaria
+Can We Estimate Insect Identification Ease Degrees from their Identification Key Paths?
+Elsevier (2020)
+Google Scholar
+[22]
+Meena Susheela, Singh I.P., Meena Ramji Lal
+Cost of Cultivation and Returns on Different Cost Concepts Basis of Onion in Rajasthan
+ND (2016)
+Google Scholar
+[23]
+Mandal Amit
+Varying Profitability and Determinants of Gram Crop using Cost of Cultivation Data: A Fixed Effect Approach
+Springer (2021)
+Google Scholar

@@ -1,0 +1,127 @@
+JXCT Soil NPK Sensor: Rs. 1353.62 | Link: https://www.aliexpress.com/item/1005001524845572.html 
+Arduino Nano Board(3): Rs. 70.22 | Link: https://www.aliexpress.com/item/1005002998391675.html
+0.96" OLED Display(4): Rs. 109.98 | Link: https://www.aliexpress.com/item/1005001621838435.html
+MAX485 Modbus Module(5): Rs. 61.76 | Link: https://www.aliexpress.com/item/1005002689205471.html
+9-12V DC Power Supply: Rs. 196.28 | Link: https://www.aliexpress.com/item/1005004113820217.html
+Connecting Wires & BreadBoard: Rs. 199 | Link: https://www.amazon.in/dp/B01BLJGS7M?ref_=cm_sw_r_apin_dp_Y5WF593XCPJJQZJ95AN0
+Total: Rs. 1990.86
+1679.48
+
+Measure soil nutrient content with Arduino and Soil NPK sensor 
+ DIY soil NPK meter using Arduino and soil NPK sensor 
+ 
+ Soil NPK sensor Arduino 
+ Content 
+ Overview 
+ - list of materials 
+ - Soil NPK sensor 
+ -- Technical information 
+ -MAX485 TTL - RS-485 interface module 
+ -- Technical information 
+ -- Pinout and module connection 
+ - Connect the soil NPK sensor to the Arduino 
+ -Project PCB Gerber File and PCB ordering online 
+ - Modbus command for NPK sensor 
+ --1. Nitrogen: 0x01,0x03, 0x00, 0x1e, 0x00, 0x01, 0xe4, 0x0c} 
+ --2. Phosphorus: {0x01,0x03, 0x00, 0x1f, 0x00, 0x01, 0xb5, 0xcc} 
+ --3. Potassium: 0x01,0x03, 0x00, 0x20, 0x00, 0x01, 0x85, 0xc0} 
+ - Source code/program 
+ - Soil NPK data monitoring on an OLED screen 
+ - Tutorial video and guide 
+ 
+ Overview 
+ We understand how to connect a soil NPK sensor to Arduino and make your own Arduino soil NPK meter. Soil  nutrient content is easy to measure with an NPK soil sensor and an Arduino. Measuring soil  N (Nitrogen), P (Phosphorus) and K (Potassium) levels is necessary to determine how much additional nutrients need to be added to the soil to increase crop fertility. Soil fertility is detected by NPK sensors. The main components of soil fertilizers are nitrogen, phosphorus and potassium. Knowing the nutrient content of the soil helps us know the nutrient  deficiency or abundance of the soil used to support crop production.  There are several methods for measuring  soil nutrient content, such as using  optical sensors or a spectrometer. But the spectrum analysis method is not convenient and the disadvantage is that the data is only 60-70% correct. Although the spectral analysis method is compared with traditional wet chemical methods, the accuracy of the products has not yet been fully resolved due to lack of data. So here we  use  JXCT Soil NPK sensor to detect  nitrogen, phosphorus and potassium in  soil. The JXCT Soil NPK sensor is an affordable, fast response, highly accurate and portable sensor that works with Modbus RS485. The advantage of this sensor compared to the traditional detection method is that it provides a very fast measurement and the data is very accurate. All you have to do is  insert its sensor into the ground and get a reading from the  Arduino. So, let's explore in detail how to interface Soil NPK sensor with Arduino. List of materials 
+ Listed below are the components needed to make a device that will help you study the nutrient content of your soil. You can buy almost all the components on Amazon. S. N. COMPONENT NAME QUANTITY PURCHASE CONNECTION COSTS 
+ 1 Arduino Nano Board 1 Amazon | AliExpress Rs. 70,22 
+ 2 NPK Sensor 1 Amazon | AliExpress Rs. 1353.62 
+ 3 0.96-inch OLED screen 1 Amazon | AliExpress Rs.109.98 
+ 4 MAX485 Modbus Module 1 Amazon | AliExpress Rs. 61.76 
+ 5 9-12V DC Power Supply 1 Amazon | AliExpress Rs. 196.28 
+ 6 connection cables 10 Amazon | AliExpress Rs. 199 
+ 7 Breadboard 1 Amazon | AliExpress 
+ Soil NPK sensor: 
+ The soil NPK sensor is suitable for measuring soil content of nitrogen, phosphorus and potassium. It helps determine soil fertility, which facilitates a systematic assessment of  soil condition. The sensor can be buried in the ground for a long time. It has high-quality sensor, rust resistance, electrolysis resistance, salt and alkali corrosion resistance to ensure the long-term performance of the sensor part. Therefore it is suitable for all types of soil. Suitable for detecting alkaline soil, acid soil, substrate soil, seedling  soil and coconut bran. The sensor does not require a chemical reagent. Because it has high measurement accuracy, fast response speed and good interchangeability, it can be used with any microcontroller. The sensor cannot be used directly with a microcontroller because it has a Modbus communication port. Therefore you need any Modbus module (eg RS485/MAX485) and connect the sensor to the microcontroller.  The sensor works with a voltage of 9-24V and the current consumption is very low. Talking about the accuracy of the sensor, it is up to  2%. The resolution of nitrogen, phosphorus and potassium measurement is up to 1 mg/kg (mg/l). With this Soil NPK sensor, you can build your own Arduino Soil NPK meter or any cloud-IoT-based soil nutrient monitoring system. Technical information: 
+ 1. Power: 9V-24V 
+ 2. Measuring range: 0-1999 mg/kg (mg/l) 
+ 3. Working temperature: 5-45 °C 
+ 4. Resolution: 1mg/kg 
+ 5. Accuracy: ± 2% F.S. 
+ 6. Output signal: RS485 
+ 7. Data transmission: 2400/4800/9600 
+ 8. Protection class: IP68 
+ 
+ MAX485 TTL to RS-485 interface module: 
+ The MAX485 TTL to RS-485 interface module enables the use of a differential RS-485 signal for robust long-distance serial communication over distances of up to 1200 meters or in electrically noisy environments, and is widely used in industrial environments. It supports data transfer rates up to 2.5 Mbit/s, but  the maximum supported data rate decreases as the distance increases. The data starts  as a typical TTL level sequence that touches the microcontroller, while the RS-485 module takes care of converting the electrical signals between TTL and the differential signal used by RS-485. A major advantage of RS-485 is that it supports multiple devices (up to 32) on the same cable, often referred to as a "multi-drop" cable. Technical information 
+ 1. Use a MAX485 interface chip 
+ 2. Uses differential signaling for noise immunity 
+ 3. Distances up to 1200 meters 
+ 4. Speed ​​up to 2.5 Mbit/s 
+ 5. Multi-drop supports up to 32 devices on the same bus 
+ 6. Red power indicator light 
+ 7. 5V operation 
+ 
+ Pinout and module connection: 
+ The module has two 4-pin headers. 
+1 x 4 header (data side): 
+ RO = receiver output. Connects to the serial RX connector of the microcontroller 
+ RE = receiver used. Active LOW. Connects to the digital output pin of the microcontroller. Drive LOW to enable the receiver, HIGH to enable the controller 
+ DE = Driver Enable. Active HIGH. RE is normally jumped to the Pin.  DI = Driver Input. Connects to the Serial TX connector of the microcontroller 
+ 1 x 4 header (output side): 
+ VCC = 5V 
+ B = data 'B' slash. Shared by B 
+ A = non-inverted line of data 'A'. Connects the remote end to module A  
+ GND = Ground 
+ 1 x 2 screw plug
+
+Connect the soil NPK sensor to Arduino:
+Now we connect the Soil NPK sensor to the Arduino Nano board using the MAX485 Modbus module. Check the wiring diagram below. Connect the Modbus R0 and DI pins D2 and D3 to the arduino using the software. Similarly, we must allow DE and RE to be high. You can do this by connecting the DE and RE pins to the D7 and D8 pins of the Arduino. The NPK sensor has 4 wires. Brown is VCC which needs a 9V-24V power supply. GND pin which is black in color. So connect it to Arduino GND. The blue wire which is the B pin is connected to the B pin of the MAX485 and the yellow wire which is the A pin is connected to the A pin of the MAX485. The 0.96-inch SSD1306 OLED display is an I2C module. Connect the VCC and GND pins of the OLED display to the 3.3V and GND pins of the Arduino. Similarly, connect its SDA and SCL pins to Arduino A4 and A5 connectors. You can follow the circuit diagram and assemble the circuit on a breadboard or make a custom printed circuit.
+
+Modbus command for NPK sensor:
+Modbus commands can control a Modbus device:
+1. Change the value in one of its registers to be written to the coil and keep records
+2. I/O Port Read: Read information about discrete and coil ports,
+3. tells the device to return one or more values ​​contained in its wrapper and keep a record
+
+A Modbus command contains the Modbus address of the device for which it is intended (1 to 247). A Modbus address is also called a polling frame. Only the addressed device responds and acts on the command, even if other devices could receive it. The NPK sensor has 3 different query frames to read nitrogen (N), phosphorus (P) and potassium (K) values. The questionnaire is supplied with a user manual. The following individual query frames for NPK data:
+1. Nitrogen: {0x01,0x03, 0x00, 0x1e, 0x00, 0x01, 0xe4, 0x0c}:
+The question frame for soil nitrogen value is:
+In response, you will receive the following information:
+You can calculate the nitrogen content of the soil from your answer. For example, if you get 0030, the soil nitrogen value is:
+0020 H (hex) = 32 (decimal) => nitrogen = 32 mg/kg
+2. Phosphorus: {0x01,0x03, 0x00, 0x1f, 0x00, 0x01, 0xb5, 0xcc}:
+The framework for the soil phosphorus content study is as follows:
+In response, you will receive the following information:
+You can calculate the phosphorus content of the soil based on your answer. For example, if you get 0030, the soil nitrogen value is:
+0025 H (hex) = 37 (decimal) => phosphorus = 37/kg
+3. Potassium: {0x01,0x03, 0x00, 0x20, 0x00, 0x01, 0x85, 0xc0}:
+The question frame for obtaining soil potassium content is:
+In response, you will receive the following information:
+You can calculate the potassium content of the soil based on your answer. For example, if you get 0030, the soil potassium content is:
+0030 H (hex) = 48 (decimal) => potassium = 48 mg/kg
+Source code/program:
+Below is the source code to connect the Soil NPK sensor to Arduino and get the soil nutrient value from the sensor via Modbus command. You can send a command and get the value as a HEX code. The HEX code must be converted to decimal to obtain measured soil nutrient content data. Since we are using an OLED screen to display soil nutrients (nitrogen, phosphorus and potassium) in mg/kg, you will need an OLED library. Download the following OLED library and add it to the Arduino IDE. 1. Adafruit SSD1306 Library: Download
+2. Adafruit GFX Library: Download
+Here is the full source code. Compile the code and upload it to the Arduino Nano board. Note: The code is the only one capable of measuring soil NPK values ​​up to 255 mg/kg. This is because we are only reading an 8-bit value. According to the sensor information sheet, a value of up to 1999mg/kg can be measured. To read such a value, we need to read 16-bit data. Refer to the Soil EC sensor code to read such high values. Monitoring soil NPK data on an OLED screen:
+After uploading the code to the Arduino nanoboard, the OLED together with the sensor will be initialized. The sensor takes some time to stabilize and the reading may be incorrect at first. Once the sensor is installed, you can sink the sensor into the soil to get an NPK reading. The amount of nitrogen, phosphorus and potassium, which is the ammonium content of the soil, is shown in mg/kg.
+This is how you connect the soil nutrient sensor to the Arduino and get NPK readings. Similarly, place the sensor in different soil samples. Depending on the type of soil, you will see differences in the amount of NPK.
+
+
+Q. Introduction
+Hi, my name is Subhrajit Panda and I am an aspiring data science engineer. I am highly skilled in using analytical tools and languages such as Python, SQL, and Tableau. My expertise lies in deep learning including data cleaning, preprocessing, feature engineering, and modeling. I have experience working with large datasets and identifying hidden patterns and insights that can help solve real-world problems. In addition to my technical skills, I am a strong problem-solver and can work independently or as part of a team to deliver high-quality work. I am excited to be a part of the rapidly evolving field of technology and am constantly seeking new opportunities to learn and grow as a data science engineer.
+
+Q. Tell us about your biggest strength.
+
+I would say my biggest strength is that I can work pretty well under pressure. I’ve had several situations where I had to come up with a solution to some problem or another within a very limited time frame.
+During this semester's minor project, we had to come up with a deep-learning model with a full-stack web application. My team turned out to be extremely unorganized even after giving them 6 months to complete their tasks they were not able to do anything at all. 
+I already had some experience working with models, so I did my part in advance and started waiting for the rest of the team. I was in charge of creating the models, and the team was supposed to make the entire web application. 
+Around a week before the deadline, I saw that no one was doing anything, so I organized a sync meeting. 
+Turns out the rest of the team didn’t do anything. So, I had to take charge of the project and make sure we had the project ready by the deadline. I completed the whole back end and a little bit of the front-end.
+
+Q. If you were told to improve one thing in yourself, what that one thing would be?
+If I were to improve one thing about myself, it would be my ability to communicate technical concepts in a simplified manner. While I have a deep understanding of data science and other technologies, I realize that not everyone may share my level of expertise. Therefore, I am constantly working on improving my communication skills to effectively convey technical concepts to non-technical stakeholders. I believe that clear communication is essential for bridging the gap between data science and business stakeholders.
+
+Q. Why have you applied for Tech Track?
+I have applied for the Tech Track because I am passionate about the field of technology and want to be a part of the rapid pace of innovation that is happening in the industry. I believe that this program will provide me with the opportunity to develop my skills and gain valuable experience in the tech field. Additionally, I am excited about the prospect of working with other talented individuals who share my passion for technology and innovation.
+
+Q. Why HighRadius?
+I have applied to HighRadius because I am impressed with the company's focus on innovation and cutting-edge technology. I am particularly interested in the company's use of machine learning and artificial intelligence to streamline financial processes. HighRadius is at the forefront of developing solutions that leverage data science to drive business outcomes. I believe that HighRadius is an exciting place to work for someone passionate about data science and its practical applications in the business world. Additionally, the company has a great reputation for fostering a culture of innovation, collaboration, and personal growth.

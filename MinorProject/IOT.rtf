@@ -1,0 +1,281 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil Calibri;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 Measure Soil Nutrient using Arduino & Soil NPK Sensor\par
+DIY Soil NPK Meter using Arduino & Soil NPK Sensor\par
+\par
+Soil NPK Sensor Arduino\par
+Table of Contents\par
+Overview\par
+-Bill of Materials\par
+-Soil NPK Sensor\par
+--Specifications\par
+-MAX485 TTL to RS-485 Interface Module\par
+--Specifications\par
+--Pinout & Module Connection\par
+-Interfacing Soil NPK Sensor with Arduino\par
+-Project PCB Gerber File & PCB Ordering Online\par
+-Modbus Command for NPK Sensor\par
+--1. Nitrogen: \{0x01,0x03, 0x00, 0x1e, 0x00, 0x01, 0xe4, 0x0c\}\par
+--2. Phosphorous:\{0x01,0x03, 0x00, 0x1f, 0x00, 0x01, 0xb5, 0xcc\}\par
+--3. Potassium:\{0x01,0x03, 0x00, 0x20, 0x00, 0x01, 0x85, 0xc0\}\par
+-Source Code/Program\par
+-Monitoring Soil NPK Data on OLED Display\par
+-Video Tutorial & Guide\par
+\par
+Overview\par
+We are goind to understand about the interfacing of Soil NPK Sensor with Arduino & make our own Arduino Soil NPK Meter. The soil nutrient content can be easily measured using NPK Soil Sensor & Arduino. Measurement of soil content N (nitrogen), P (phosphorus), and K (potassium) is necessary to determine how much additional nutrient content is to be added to soil to increase crop fertility.\par
+The soil fertility is detected using NPK sensors. A major component of soil fertilizer is nitrogen, phosphorus, and potassium. The knowledge of the soil nutrient concentration can help us to learn about nutritional deficiency or abundance in soils used to endorse plant production.\par
+There are multiple methods of measuring the soil nutrient content like using some optical sensors or using the spectrometer. But the spectral analysis method is not convenient and the drawback is the data are only 60-70% correct. While comparing the spectral analysis method with traditional wet chemistry methods, the accuracy of the products is yet to be fully resolved, given the paucity of data in that regard.\par
+So, here we will use a JXCT Soil NPK Sensor to detect the soil nitrogen, phosphorous & Potassium in a soil. The JXCT Soil NPK sensor is a low cost, quick responsive, high precision & portable Sensor that works with Modbus RS485. The advantage of this sensor over a traditional detection method is that it gives very fast measurement & data are highly accurate. All you need is to insert its probe in soil and get the reading using Arduino. So, let\rquote s learn in detail about the interfacing of Soil NPK Sensor with Arduino.\par
+Bill of Materials\par
+The components required for making a device that can help you in studying the Soil Nutrient Content is given below. You can purchase almost all the components from Amazon.\par
+S.N.\tab COMPONENTS NAME\tab QUANTITY\tab PURCHASE LINK    COST\par
+1\tab Arduino Nano Board\tab 1\tab Amazon | AliExpress            Rs. 70.22\par
+2\tab NPK Sensor\tab 1\tab Amazon | AliExpress                           Rs. 1353.62\par
+3\tab 0.96" OLED Display\tab 1\tab Amazon | AliExpress             Rs. 109.98\par
+4\tab MAX485 Modbus Module\tab 1\tab Amazon | AliExpress Rs. 61.76\par
+5\tab 9-12V DC Power Supply\tab 1\tab Amazon | AliExpress              Rs. 196.28\par
+6\tab Connecting Wires\tab 10\tab Amazon | AliExpress                Rs. 199\par
+7\tab Breadboard\tab 1\tab Amazon | AliExpress\par
+Soil NPK Sensor:\par
+The soil NPK sensor is suitable for detecting the content of nitrogen, phosphorus, and potassium in the soil. It helps in determining the fertility of the soil thereby facilitating the systematic assessment of the soil condition. The sensor can be buried in the soil for a long time. It has a High-quality probe, rust resistance, electrolytic resistance, salt & alkali corrosion resistance, to ensure the long-term operation of the probe part. Therefore, it is suitable for all kinds of soil. It is suitable for the detection of alkaline soil, acid soil, substrate soil, seedling bed soil & coconut bran soil.\par
+The sensor doesn\rquote t require any chemical reagent. Since it has High measurement accuracy, fast response speed, and good interchangeability, it can be used with any microcontroller. You cannot use the sensor directly with the microcontroller as it has a Modbus Communication port. Hence you need any Modbus Module like RS485/MAX485 and connect the sensor to the microcontroller.\par
+The sensor operates on 9-24V & power consumption is very low. While talking about the accuracy of the sensor, it is up to within 2%. The nitrogen, phosphorous & potassium measuring resolution is up to 1mg/kg (mg/l).\par
+Using this Soil NPK Sensor, you can make your own Arduino Soil NPK Meter or any Cloud IoT Based Soil Nutrient Content Monitoring System.\par
+Specifications:\par
+1. Power: 9V-24V\par
+2. Measuring Range: 0-1999 mg/kg (mg/l)\par
+3. Operating Temperature: 5-45 \'b0C\par
+4. Resolution: 1mg/kg\par
+5. Precision: \'b12% F.S.\par
+6. Output Signal: RS485\par
+7. Baud Rate: 2400/4800/9600\par
+8. Protection Class: IP68\par
+\par
+MAX485 TTL to RS-485 Interface Module:\par
+The MAX485 TTL to RS-485 Interface Module allows us to use the RS-485 differential signaling for robust long-distance serial communications up to 1200 meters or in electrically noisy environments and is commonly used in industrial environments. It supports up to 2.5MBit/Sec data rates, but as distance goes up, the maximum data rate that can be supported comes down.\par
+The data starts out as a typical TTL level serial as far as the microcontroller is concerned while the RS-485 module takes care of converting the electrical signals between TTL and the differential signaling used by RS-485. A significant benefit of RS-485 is that it supports multiple devices (up to 32) on the same cable, commonly referred to as \lquote multi-drop\rquote .\par
+Specifications\par
+1. Use MAX485 Interface chip\par
+2. Uses differential signaling for noise immunity\par
+3. Distances up to 1200 meters\par
+4. Speeds up to 2.5Mbit/Sec\par
+5. Multi-drop supports up to 32 devices on same bus\par
+6. Red power LED\par
+7. 5V operation\par
+\par
+Pinout & Module Connection:\par
+The module has two 4-pin headers on the assembly.\par
+1 x 4 Header (Data side):\par
+RO = Receiver Output. Connects to a serial RX pin on the microcontroller\par
+RE = Receiver Enable. Active LOW. Connects to a digital output pin on a microcontroller. Drive LOW to enable receiver, HIGH to enable Driver\par
+DE = Driver Enable. Active HIGH. Typically jumpered to RE Pin.\par
+DI = Driver Input. Connects to serial TX pin on the microcontroller\par
+1 x 4 Header (Output side):\par
+VCC = 5V\par
+B = Data \lquote B\rquote  Inverted Line. Common with the B\par
+A = Data \lquote A\rquote  Non-Inverted Line. Connects to A on far end module\par
+GND = Ground\par
+1 x 2 Screw Terminal Block (Output side):\par
+B = Data \lquote B\rquote  Inverted Line. Connects to B on far end module\par
+A = Data \lquote A\rquote  Non-Inverted Line. Connects to A on far end module\par
+\par
+Interfacing Soil NPK Sensor with Arduino:\par
+Now, let us interface the Soil NPK Sensor with the Arduino Nano Board using the MAX485 Modbus Module. Check the connection diagram below.\par
+Connect the R0 & DI pin of from the Modbus to D2 & D3 Arduino using Software Serial. Similarly, we have to enable DE & RE high. To do this connect the DE & RE Pins to the D7 & D8 pin of Arduino. The NPK Sensor has 4 wires. The brown one is VCC which needs a 9V-24V Power Supply. The GND pin which is black in color. So connect it to the GND of Arduino. The Blue wire which is the B pin is connected to the B pin of MAX485 & the Yellow Wire which is the A pin is connected to the A pin of MAX485.\par
+The 0.96\f1\u8243? SSD1306 OLED Display is an I2C Module. Connect the OLED Display VCC & GND pins to 3.3V & GND of Arduino. Similarly, connect its SDA & SCL pins to the A4 & A5 of Arduino. You can follow the circuit diagram & assemble the circuit on a breadboard or make a custom PCB.\par
+\par
+Project PCB Gerber File & PCB Ordering Online\f0\lang1033 :\f1\lang9\par
+If you don\rquote t want to assemble the circuit on breadboard and you want PCB for the project, then here is the PCB for you. The PCB Board for the NPK Meter is designed using EasyEDA online Circuit Schematics & PCB designing tool. The front side and back side of the PCB is given below.\par
+\par
+Now you can visit the NextPCB official website by clicking here: {{\field{\*\fldinst{HYPERLINK https://www.nextpcb.com/ }}{\fldrslt{https://www.nextpcb.com/\ul0\cf0}}}}\f1\fs22 . So you will be directed to NextPCB website.\par
+You can now upload the Gerber File to the Website and place an order. The PCB quality are clean and brilliant. That is why most of the people trust NextPCB for PCB & PCBA Services.\par
+\par
+Modbus Command for NPK Sensor\f0\lang1033 :\f1\lang9\par
+Modbus commands can instruct a Modbus Device to:\par
+1. change the value in one of its registers, which is written to Coil and Holding registers\par
+2. read an I/O port: Read data from Discrete and Coil ports,\par
+3. command the device to send back one or more values contained in its Coil and Holding register\par
+A Modbus command contains the Modbus address of the device it is intended for (1 to 247). The Modbus address is also called an inquiry frame. Only the addressed device will respond and act on the command, even though other devices might receive it.\par
+The NPK Sensor has 3 different inquiry frame for reading the value of Nitrogen (N), Phosphorous (P) & Potassium (K). The inquiry frame is provided along with the instruction manual. For the NPK data the following individual inquiry frameworks:\par
+1. Nitrogen: \{0x01,0x03, 0x00, 0x1e, 0x00, 0x01, 0xe4, 0x0c\}\f0\lang1033 :\f1\lang9\par
+The inquiry frame for getting Soil Nitrogen Value is:\par
+\par
+\par
+You will get the following as a response:\par
+\par
+\par
+You can calculate the Soil Nitrogen from the Response you receive. For example, if you get 0030 as a response then Soil Nitrogen Value will be:\par
+0020 H(hexadecimal) = 32 (Decimal) => Nitrogen = 32mg/kg\par
+2. Phosphorous:\{0x01,0x03, 0x00, 0x1f, 0x00, 0x01, 0xb5, 0xcc\}\f0\lang1033 :\f1\lang9\par
+The inquiry frame for getting Soil Phosphorous Value is:\par
+\par
+\par
+You will get the following as a response:\par
+\par
+\par
+You can calculate the Soil Phosphorous from the Response you receive. For example, if you get 0030 as a response then Soil Nitrogen Value will be:\par
+0025 H(hexadecimal) = 37 (Decimal) => Phosphorous = 37/kg\par
+3. Potassium:\{0x01,0x03, 0x00, 0x20, 0x00, 0x01, 0x85, 0xc0\}\f0\lang1033 :\f1\lang9\par
+The inquiry frame for getting Soil Potassium Value is:\par
+\par
+\par
+You will get the following as a response:\par
+\par
+You can calculate the Soil Potassium from the Response you receive. For example, if you get 0030 as a response then Soil Potassium Value will be:\par
+0030 H(hexadecimal) =48 (Decimal) => Potassium = 48mg/kg\par
+\par
+Source Code/Program\f0\lang1033 :\f1\lang9\par
+The source code for interfacing Soil NPK Sensor with Arduino & retrieving Soil Nutrient value from the Sensor via Modbus command is given below. You can send the command and retrieve the value in HEX Code. The HEX code needs to be converted into Decimal to get the Measured Soil Nutrient content data.\par
+Since we are using OLED Display to display the Soil Nutrient values (Nitrogen, Phosphorous & Potassium) in mg/kg, you will need OLED Library. Download the following OLED Library and add it to the Arduino IDE.\par
+1. Adafruit SSD1306 Library: Download\par
+2. Adafruit GFX Library: Download\par
+Here is the complete source code. Compile the code & upload it to the Arduino Nano Board.\par
+#include <SoftwareSerial.h>\par
+#include <Wire.h>\par
+#include <Adafruit_GFX.h>\par
+#include <Adafruit_SSD1306.h>\par
+ \par
+#define SCREEN_WIDTH 128    // OLED display width, in pixels\par
+#define SCREEN_HEIGHT 64    // OLED display height, in pixels\par
+#define OLED_RESET -1       // Reset pin # (or -1 if sharing Arduino reset pin)\par
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);\par
+ \par
+#define RE 8\par
+#define DE 7\par
+ \par
+//const byte code[]= \{0x01, 0x03, 0x00, 0x1e, 0x00, 0x03, 0x65, 0xCD\};\par
+const byte nitro[] = \{0x01,0x03, 0x00, 0x1e, 0x00, 0x01, 0xe4, 0x0c\};\par
+const byte phos[] = \{0x01,0x03, 0x00, 0x1f, 0x00, 0x01, 0xb5, 0xcc\};\par
+const byte pota[] = \{0x01,0x03, 0x00, 0x20, 0x00, 0x01, 0x85, 0xc0\};\par
+ \par
+byte values[11];\par
+SoftwareSerial mod(2,3);\par
+ \par
+void setup() \{\par
+  Serial.begin(9600);\par
+  mod.begin(9600);\par
+  pinMode(RE, OUTPUT);\par
+  pinMode(DE, OUTPUT);\par
+  \par
+  display.begin(SSD1306_SWITCHCAPVCC, 0x3C); //initialize with the I2C addr 0x3C (128x64)\par
+  delay(500);\par
+  display.clearDisplay();\par
+  display.setCursor(25, 15);\par
+  display.setTextSize(1);\par
+  display.setTextColor(WHITE);\par
+  display.println(" NPK Sensor");\par
+  display.setCursor(25, 35);\par
+  display.setTextSize(1);\par
+  display.print("Initializing");\par
+  display.display();\par
+  delay(3000);\par
+\}\par
+ \par
+void loop() \{\par
+  byte val1,val2,val3;\par
+  val1 = nitrogen();\par
+  delay(250);\par
+  val2 = phosphorous();\par
+  delay(250);\par
+  val3 = potassium();\par
+  delay(250);\par
+  \par
+  \par
+  Serial.print("Nitrogen: ");\par
+  Serial.print(val1);\par
+  Serial.println(" mg/kg");\par
+  Serial.print("Phosphorous: ");\par
+  Serial.print(val2);\par
+  Serial.println(" mg/kg");\par
+  Serial.print("Potassium: ");\par
+  Serial.print(val3);\par
+  Serial.println(" mg/kg");\par
+  delay(2000);\par
+ \par
+  display.clearDisplay();\par
+  \par
+ \par
+  display.setTextSize(2);\par
+  display.setCursor(0, 5);\par
+  display.print("N: ");\par
+  display.print(val1);\par
+  display.setTextSize(1);\par
+  display.print(" mg/kg");\par
+ \par
+  display.setTextSize(2);\par
+  display.setCursor(0, 25);\par
+  display.print("P: ");\par
+  display.print(val2);\par
+  display.setTextSize(1);\par
+  display.print(" mg/kg");\par
+ \par
+  display.setTextSize(2);\par
+  display.setCursor(0, 45);\par
+  display.print("K: ");\par
+  display.print(val3);\par
+  display.setTextSize(1);\par
+  display.print(" mg/kg");\par
+ \par
+  display.display();\par
+\}\par
+ \par
+byte nitrogen()\{\par
+  digitalWrite(DE,HIGH);\par
+  digitalWrite(RE,HIGH);\par
+  delay(10);\par
+  if(mod.write(nitro,sizeof(nitro))==8)\{\par
+    digitalWrite(DE,LOW);\par
+    digitalWrite(RE,LOW);\par
+    for(byte i=0;i<7;i++)\{\par
+    //Serial.print(mod.read(),HEX);\par
+    values[i] = mod.read();\par
+    Serial.print(values[i],HEX);\par
+    \}\par
+    Serial.println();\par
+  \}\par
+  return values[4];\par
+\}\par
+ \par
+byte phosphorous()\{\par
+  digitalWrite(DE,HIGH);\par
+  digitalWrite(RE,HIGH);\par
+  delay(10);\par
+  if(mod.write(phos,sizeof(phos))==8)\{\par
+    digitalWrite(DE,LOW);\par
+    digitalWrite(RE,LOW);\par
+    for(byte i=0;i<7;i++)\{\par
+    //Serial.print(mod.read(),HEX);\par
+    values[i] = mod.read();\par
+    Serial.print(values[i],HEX);\par
+    \}\par
+    Serial.println();\par
+  \}\par
+  return values[4];\par
+\}\par
+ \par
+byte potassium()\{\par
+  digitalWrite(DE,HIGH);\par
+  digitalWrite(RE,HIGH);\par
+  delay(10);\par
+  if(mod.write(pota,sizeof(pota))==8)\{\par
+    digitalWrite(DE,LOW);\par
+    digitalWrite(RE,LOW);\par
+    for(byte i=0;i<7;i++)\{\par
+    //Serial.print(mod.read(),HEX);\par
+    values[i] = mod.read();\par
+    Serial.print(values[i],HEX);\par
+    \}\par
+    Serial.println();\par
+  \}\par
+  return values[4];\par
+\}\par
+Note: The code is the only capable of measuring the Soil NPK values up to 255mg/kg. This is because we are only reading 8bit value. According to the datasheet of the Sensor, you can measure the value up to 1999mg/kg. To read such value we have to read 16bit data. Refer to the Soil EC Sensor Code to read such high values.\par
+\par
+Monitoring Soil NPK Data on OLED Display\f0\lang1033 :\f1\lang9\par
+Once you upload the code to Arduino Nano Board, the OLED will initialize along with the sensor. The sensor will take some time for stability and the reading may be incorrect initially.\par
+Once the sensor gets becomes stable, you can dip the sensor in the soil to get the NPK Reading. The volume of Nitrogen, Phosphorous & Potassium which are the Ammonium content in the soil will be displayed as mg/Kg.\par
+So this is how you interface Soil Nutrient Sensor Arduino & get the NPK Readings. Similarly, put the sensor in different samples of soil. You will see a variation in the volume of NPK depending upon the type of soil.\f0\par
+}
+ 
