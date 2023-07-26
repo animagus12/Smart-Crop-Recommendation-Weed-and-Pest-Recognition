@@ -1,0 +1,10 @@
+Flask==2.2.3
+flask_mysqldb==1.0.1
+keras==2.10.0
+MySQL-python==1.2.5
+numpy==1.23.5
+openai==0.27.8
+opencv_python==4.7.0.72
+requests==2.28.2
+tensorflow==2.10.1
+Werkzeug==2.2.3
